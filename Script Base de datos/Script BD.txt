@@ -1,0 +1,31 @@
+CREATE DATABASE postgres;
+
+CREATE TABLE IF NOT EXISTS public.cliente
+(
+    id integer NOT NULL,
+    id_banco integer,
+    nombre character varying COLLATE pg_catalog."default",
+    apellido character varying COLLATE pg_catalog."default",
+    documento character varying COLLATE pg_catalog."default",
+    direccion character varying COLLATE pg_catalog."default",
+    mail character varying COLLATE pg_catalog."default",
+    celular character varying COLLATE pg_catalog."default",
+    estado character varying COLLATE pg_catalog."default",
+    CONSTRAINT cliente_pkey PRIMARY KEY (id)
+)
+
+
+CREATE TABLE IF NOT EXISTS public.factura
+(
+    id integer,
+    id_cliente integer NOT NULL,
+    nro_factura character varying COLLATE pg_catalog."default",
+    fecha_hora character varying COLLATE pg_catalog."default",
+    total character varying COLLATE pg_catalog."default",
+    total_iva5 character varying COLLATE pg_catalog."default",
+    total_iva10 character varying COLLATE pg_catalog."default",
+    total_iva character varying COLLATE pg_catalog."default",
+    total_letras character varying COLLATE pg_catalog."default",
+    sucursal character varying COLLATE pg_catalog."default",
+    CONSTRAINT factura_pkey PRIMARY KEY (id_cliente)
+)

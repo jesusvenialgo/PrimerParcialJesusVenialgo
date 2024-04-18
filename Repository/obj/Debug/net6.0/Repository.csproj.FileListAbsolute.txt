@@ -1,0 +1,12 @@
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\bin\Debug\net6.0\Repository.deps.json
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\bin\Debug\net6.0\Repository.dll
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\bin\Debug\net6.0\Repository.pdb
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\obj\Debug\net6.0\Repository.dll
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\obj\Debug\net6.0\refint\Repository.dll
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\obj\Debug\net6.0\Repository.pdb
+E:\UNIVERSIDAD AMERICANA\NOVENO SEMESTRE 2024\OPTATIVO V\Primer Parcial\Repository\obj\Debug\net6.0\ref\Repository.dll

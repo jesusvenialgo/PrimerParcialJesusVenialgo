@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "sWWbvQMkHinp3pl9fH2vd+8gsbSwl6E36VwwSl4xt+9emnJNlY670gqBv7nJPQ9Vay1uQQdSuzNtaK5Ea8cfWw==",
+  "success": true,
+  "projectFilePath": "E:\\UNIVERSIDAD AMERICANA\\NOVENO SEMESTRE 2024\\OPTATIVO V\\Primer Parcial\\Services\\Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jes\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\Jes\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Jes\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Jes\\.nuget\\packages\\npgsql\\8.0.2\\npgsql.8.0.2.nupkg.sha512",
+    "C:\\Users\\Jes\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
+    "C:\\Users\\Jes\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Jes\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Jes\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
