@@ -38,9 +38,8 @@ namespace Repository.Data
         {
             try
             {
-                conexionDB.Execute("Update public.factura (id, id_cliente, nro_factura, fecha_hora, total, total_iva5, total_iva10, total_iva," +
-                    "total_iva5, total_iva10, total_iva, total_letras, sucursal) values (@id, @id_cliente, @nro_factura, @fecha_hora, @total," +
-                    $"@total_iva5, @total_iva10, @total_iva, @total_letras, @sucursal where id = {factura.id}", factura);
+                conexionDB.Execute("Update public.factura set id_cliente = @id_cliente, nro_factura = @nro_factura, fecha_hora = @fecha_hora, total_iva5 = @total_iva5," +
+                    $"total_iva10 = @total_iva10, total_iva = @total_iva, total_letras = @total_letras, sucursal = @sucursal where id = {factura.id}", factura);
 
                 return ("El Registro fue actualizado correctamente");
             }
