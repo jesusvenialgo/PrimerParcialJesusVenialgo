@@ -18,14 +18,14 @@ namespace PrimerParcialJesusVenialgo.Controllers
             clienteService = new ClienteService(configuracion.GetConnectionString("postgres"));
         }
         [HttpPost("Add")]
-        public ActionResult Add(Repository.Data.ClienteModel cliente)
+        public ActionResult Add([FromBody]Repository.Data.ClienteModel cliente)
         {
             clienteService.add(cliente);
             return Ok(new { message = "Los datos fueron agregado correctamente" });
         }
 
         [HttpPost("Update")]
-        public ActionResult Update(Repository.Data.ClienteModel cliente)
+        public ActionResult Update([FromBody] Repository.Data.ClienteModel cliente)
         {
             // Validar datos del cliente antes de actualizar (opcional)
 
@@ -34,7 +34,7 @@ namespace PrimerParcialJesusVenialgo.Controllers
         }
 
         [HttpDelete("Delete")]
-        public ActionResult Delete(int id)
+        public ActionResult Delete([FromBody]int id)
         {
             clienteRepository.delete(id);
             return Ok(new { message = "Los datos se eliminaron correctamente" });

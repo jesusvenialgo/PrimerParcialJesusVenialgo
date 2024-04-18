@@ -9,7 +9,7 @@ namespace Repository.Data
     public interface ICliente
     {
         public string add(ClienteModel cliente);
-        bool delete(ClienteModel cliente);
+        public bool delete(ClienteModel cliente);
         public string update(ClienteModel cliente);
 
         ClienteModel get(int id);

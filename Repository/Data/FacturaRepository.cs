@@ -50,17 +50,17 @@ namespace Repository.Data
             }
         }
 
-        public bool delete(int id)
+        public string delete(int id)
         {
             try
             {
                 if (conexionDB.Execute("Delete from public.factura where id = @id", new { id }) > 0)
                 {
-                    return true;
+                    return "";
                 }
                 else
                 {
-                    return false;
+                    return "";
                 }
             }
             catch (Exception ex)

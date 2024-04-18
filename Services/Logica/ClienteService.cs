@@ -21,8 +21,7 @@ namespace Services.Logica
         public string add(ClienteModel modelo)
         {
             return ValidarDatosCliente(modelo) ? clienteRepository.add(modelo) : throw new Exception("Se encontraron errores en la validación");
-        }
-
+        } 
 
 
         public string update(ClienteModel cliente)
@@ -33,8 +32,21 @@ namespace Services.Logica
             }
             else
             {
-                return "Se encontraron inconvenientes para actualizar";
+                throw new Exception("Se encontraron errores en la validación");
             }
+        }
+
+        public bool delete(int id)
+        {
+            if (ValidarEliminacionCliente(id))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
         public IEnumerable<ClienteModel> listarclientes()
@@ -76,6 +88,17 @@ namespace Services.Logica
             }
 
             return true;
+        }
+        public bool ValidarEliminacionCliente(int id)
+        {
+            // Verificar si existe el cliente con el ID especificado
+            var clienteExistente = clienteRepository.get(id);
+            if (clienteExistente == null)
+            {
+                return false; // El cliente no existe, no se puede eliminar
+            }
+
+            return true; // El cliente existe, se puede proceder con la eliminación
         }
     }
 }

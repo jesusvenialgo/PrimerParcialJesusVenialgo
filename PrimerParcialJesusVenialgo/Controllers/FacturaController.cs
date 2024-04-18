@@ -19,14 +19,14 @@ namespace PrimerParcialJesusVenialgo.Controllers
             facturaService = new FacturaService(configuracion.GetConnectionString("postgres"));
         }
         [HttpPost("Agregar")]
-        public ActionResult Add(Repository.Data.FacturaModel factura)
+        public ActionResult Add([FromBody] Repository.Data.FacturaModel factura)
         {
             facturaService.add(factura);
             return Ok(new { message = "Los datos fueron agregado correctamente" });
         }
 
         [HttpPost("Actualizar")]
-        public ActionResult Update(Repository.Data.FacturaModel factura)
+        public ActionResult Update([FromBody] Repository.Data.FacturaModel factura)
         {
             // Validar datos del cliente antes de actualizar (opcional)
 
@@ -35,7 +35,7 @@ namespace PrimerParcialJesusVenialgo.Controllers
         }
 
         [HttpDelete("Borrar")]
-        public ActionResult Delete(int id)
+        public ActionResult Delete([FromBody] int id)
         {
             facturaRepository.delete(id);
             return Ok(new { message = "Los datos se eliminaron correctamente" });
