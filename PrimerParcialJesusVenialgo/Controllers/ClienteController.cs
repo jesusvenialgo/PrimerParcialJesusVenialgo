@@ -20,8 +20,8 @@ namespace PrimerParcialJesusVenialgo.Controllers
         [HttpPost("Add")]
         public ActionResult Add([FromBody]Repository.Data.ClienteModel cliente)
         {
-            clienteService.add(cliente);
-            return Ok(new { message = "Los datos fueron agregado correctamente" });
+            var result=clienteService.add(cliente);
+            return Ok(result);
         }
 
         [HttpPost("Update")]
@@ -29,15 +29,15 @@ namespace PrimerParcialJesusVenialgo.Controllers
         {
             // Validar datos del cliente antes de actualizar (opcional)
 
-            clienteService.update(cliente);
-            return Ok(new { message = "Se han actualizado los datos correctamente" });
+            var result = clienteService.update(cliente);
+            return Ok(result);
         }
 
         [HttpDelete("Delete")]
         public ActionResult Delete([FromBody]int id)
         {
-            clienteRepository.delete(id);
-            return Ok(new { message = "Los datos se eliminaron correctamente" });
+            var result = clienteRepository.delete(id);
+            return Ok(result);
         }
 
         [HttpGet("Get")]

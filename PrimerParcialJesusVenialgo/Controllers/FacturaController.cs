@@ -21,8 +21,8 @@ namespace PrimerParcialJesusVenialgo.Controllers
         [HttpPost("Agregar")]
         public ActionResult Add([FromBody] Repository.Data.FacturaModel factura)
         {
-            facturaService.add(factura);
-            return Ok(new { message = "Los datos fueron agregado correctamente" });
+            var result = facturaService.add(factura);
+            return Ok(result);
         }
 
         [HttpPost("Actualizar")]
@@ -30,15 +30,15 @@ namespace PrimerParcialJesusVenialgo.Controllers
         {
             // Validar datos del cliente antes de actualizar (opcional)
 
-            facturaService.update(factura);
-            return Ok(new { message = "Se han actualizado los datos correctamente" });
+            var result = facturaService.update(factura);
+            return Ok(result);
         }
 
         [HttpDelete("Borrar")]
         public ActionResult Delete([FromBody] int id)
         {
-            facturaRepository.delete(id);
-            return Ok(new { message = "Los datos se eliminaron correctamente" });
+            var result = facturaRepository.delete(id);
+            return Ok(result);
         }
 
         [HttpGet("Obtener")]

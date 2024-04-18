@@ -56,11 +56,11 @@ namespace Repository.Data
             {
                 if (conexionDB.Execute("Delete from public.factura where id = @id", new { id }) > 0)
                 {
-                    return "";
+                    return "Se ha eliminado correctamente el registro";
                 }
                 else
                 {
-                    return "";
+                    return "No existe un registro con ese ID";
                 }
             }
             catch (Exception ex)

@@ -28,14 +28,44 @@ namespace Services.Logica
 
         public string update(FacturaModel factura)
         {
+            if (ValidarActualizacionFactura(factura.id, factura))
+            {
+                if (ValidarDatosFacturas(factura))
+                {
+                    return facturaRepository.update(factura);
+                }
+                else
+                {
+                    return ("Se encontraron errores en la validación");
+                }
+            }
+            else
+            {
+                return ("El cliente con el ID especificado no existe");
+            }
+
+
             if (ValidarDatosFacturas(factura))
             {
                 return facturaRepository.update(factura);
             }
             else
             {
-                return "Se encontraron inconvenientes para actualizar";
+                throw new Exception("Se encontraron errores en la validación");
             }
+        }
+
+        public string delete(int id)
+        {
+            if (ValidarEliminacionFactura(id))
+            {
+                return facturaRepository.delete(id);
+            }
+            else
+            {
+                return "Se encontraron errores en la validación.";
+            }
+
         }
 
         public IEnumerable<FacturaModel> listarfacturas()
@@ -46,6 +76,7 @@ namespace Services.Logica
 
         public bool ValidarDatosFacturas(FacturaModel factura)
         {
+            return true;
             // Validar Nro. Factura
             if (string.IsNullOrEmpty(factura.nro_factura) || !Regex.IsMatch(factura.nro_factura, @"^\d{3}-\d{3}-\d{6}$"))
             {
@@ -68,6 +99,33 @@ namespace Services.Logica
             }
 
             return true;
+        }
+
+        public bool ValidarActualizacionFactura(int id, FacturaModel factura)
+        {
+            // Verificar si existe el cliente con el ID especificado
+            var facturaExistente = facturaRepository.get(id);
+            if (facturaExistente == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+
+        }
+        public bool ValidarEliminacionFactura(int id)
+        {
+            // Verificar si existe el cliente con el ID especificado
+            var facturaExistente = facturaRepository.get(id);
+            if (facturaExistente == null)
+            {
+                return false; //"La factura no existe, no se puede eliminar";
+            }
+
+            return true; //"La factura existe, se puede proceder con la eliminación";
         }
     }
 }

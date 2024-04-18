@@ -26,6 +26,23 @@ namespace Services.Logica
 
         public string update(ClienteModel cliente)
         {
+            if (ValidarActualizacionCliente(cliente.id, cliente))
+            {
+                if (ValidarDatosCliente(cliente))
+                {
+                    return clienteRepository.update(cliente);
+                }
+                else
+                {
+                    return ("Se encontraron errores en la validación");
+                }
+            }
+            else
+            {
+                return ("El cliente con el ID especificado no existe");
+            }
+            
+
             if (ValidarDatosCliente(cliente))
             {
                 return clienteRepository.update(cliente);
@@ -36,15 +53,15 @@ namespace Services.Logica
             }
         }
 
-        public bool delete(int id)
+        public string delete(int id)
         {
             if (ValidarEliminacionCliente(id))
             {
-                return true;
+                return clienteRepository.delete(id);
             }
             else
             {
-                return false;
+                return "Se encontraron errores en la validación.";
             }
             
         }
@@ -89,16 +106,31 @@ namespace Services.Logica
 
             return true;
         }
+        public bool ValidarActualizacionCliente(int id, ClienteModel cliente)
+        {
+            // Verificar si existe el cliente con el ID especificado
+            var clienteExistente = clienteRepository.get(id);
+            if (clienteExistente == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+   
+        }
         public bool ValidarEliminacionCliente(int id)
         {
             // Verificar si existe el cliente con el ID especificado
             var clienteExistente = clienteRepository.get(id);
             if (clienteExistente == null)
             {
-                return false; // El cliente no existe, no se puede eliminar
+                return false; //"El cliente no existe, no se puede eliminar";
             }
 
-            return true; // El cliente existe, se puede proceder con la eliminación
+            return true; //"El cliente existe, se puede proceder con la eliminación";
         }
     }
 }

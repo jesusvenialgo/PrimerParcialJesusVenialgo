@@ -9,7 +9,7 @@ namespace Repository.Data
     public interface IFactura
     {
         public string add(FacturaModel factura);
-        bool delete(FacturaModel factura);
+        public string delete(FacturaModel factura);
         public string update(FacturaModel factura);
 
         FacturaModel get(int id);

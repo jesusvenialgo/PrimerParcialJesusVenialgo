@@ -24,6 +24,7 @@ namespace Repository.Data
                 conexionDB.Execute("Insert into public.cliente (id, id_banco, nombre, apellido, documento, " +
                     "direccion, mail, celular, estado) values (@id, @id_banco, @nombre, @apellido, @documento," +
                     "@direccion, @mail, @celular, @estado)", cliente);
+                
                 return ("El Registro fue agregado correctamente");
 
             }
@@ -50,18 +51,19 @@ namespace Repository.Data
             }
         }
 
-        public bool delete(int id)
+        public string delete(int id)
         {
             try
             {
                 if (conexionDB.Execute("Delete from public.cliente where id = @id", new { id }) > 0)
                 {
-                    return true;
+                    return "Se ha eliminado correctamente el registro";
                 }
                 else
                 {
-                    return false;
+                    return "No existe un registro con ese ID";
                 }
+
             }
             catch (Exception ex)
             {
